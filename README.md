@@ -17,4 +17,4 @@ import stdpopsim
 import os
 for species in stdpopsim.species.all_species():
     os.system(f"python convert_models.py {species.id}")
-"""
+```

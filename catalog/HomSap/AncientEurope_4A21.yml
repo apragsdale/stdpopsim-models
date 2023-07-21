@@ -1,0 +1,78 @@
+description: Population structure that has existed over the last 45,000 years in Europe,
+  leading to modern Europeans. The model demonstrates the divergence of a Basal European
+  Lineages into four ancient populations; Western, Eastern and Caucasus Hunter- Gatherers
+  and Anatolian Farmers. Migration of Anatolian farmers into Western Europe and admixture
+  with Western Hunter-Gatherers produces the European Neolithic Farmers. In West Asia
+  the admixture of Eastern Hunter-Gatherers and Caucasus Hunter- Gatherers leads to
+  the formation of the Yamnaya Steppe population. The Yamnaya migrate into Western
+  Europe to admixture with the Neolithic farmers giving rise to Bronze Age europeans.
+  There is only an exponential growth in population size from then to the Present-day.
+  Samples are taken at multiple point throughout history from each population.
+time_units: generations
+generation_time: 1
+metadata:
+  id: AncientEurope_4A21
+  description: Multi-population model of ancient Europe
+  citations:
+  - doi: https://doi.org/10.1101/2022.05.04.490594
+    author: Allentoft et al.
+    year: '2022'
+    reasons: [demographic model]
+  mutation_rate: 1.25e-08
+  generation_time: 29
+demes:
+- name: OOA
+  description: Basal/OOA
+  epochs:
+  - {end_time: 1500, start_size: 5000}
+- name: NE
+  description: Northern European
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 600, start_size: 5000}
+- name: WA
+  description: West Asian
+  ancestors: [OOA]
+  epochs:
+  - {end_time: 800, start_size: 5000}
+- name: CHG
+  description: Caucasus Hunter-gathers
+  ancestors: [WA]
+  epochs:
+  - {end_time: 0, start_size: 10000}
+- name: ANA
+  description: Anatolian
+  ancestors: [WA]
+  epochs:
+  - {end_time: 0, start_size: 50000}
+- name: WHG
+  description: Western Hunter-gathers
+  ancestors: [NE]
+  epochs:
+  - {end_time: 0, start_size: 10000}
+- name: EHG
+  description: Eastern Hunter-gathers
+  ancestors: [NE]
+  epochs:
+  - {end_time: 0, start_size: 10000}
+- name: NEO
+  description: Neolithic
+  start_time: 200
+  ancestors: [WHG, ANA]
+  proportions: [0.25, 0.75]
+  epochs:
+  - {end_time: 0, start_size: 50000}
+- name: YAM
+  description: Yamnaya
+  start_time: 180
+  ancestors: [EHG, CHG]
+  proportions: [0.5, 0.5]
+  epochs:
+  - {end_time: 0, start_size: 5000}
+- name: Bronze
+  description: Bronze Age
+  start_time: 140
+  ancestors: [YAM, NEO]
+  proportions: [0.5, 0.5]
+  epochs:
+  - {end_time: 0, start_size: 50000.0, end_size: 592450737.7092822}

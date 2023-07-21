@@ -1,0 +1,38 @@
+description: The bottleneck + migration model of domesticated rice varieties (indica
+  and tropical japonica) from Caicedo et al. (2007). Parameters were inferred from
+  the site frequency spectrum (SFS), with parameter values taken from Table 2.
+time_units: generations
+generation_time: 1
+metadata:
+  id: BottleneckMigration_3C07
+  description: Bottleneck + migration model for the origin of domesticated rice varieties
+  citations:
+  - doi: https://doi.org/10.1371/journal.pgen.0030163
+    author: Caicedo et al.
+    year: 2007
+    reasons: [demographic model]
+  mutation_rate: 9.033333333333333e-09
+  generation_time: 1
+demes:
+- name: RUF
+  description: Oryza rufipogon (wild rice)
+  epochs:
+  - {end_time: 0, start_size: 150000.0}
+- name: IND
+  description: Oryza sativa indica
+  start_time: 12000
+  ancestors: [RUF]
+  epochs:
+  - {end_time: 9000.0, start_size: 825.0}
+  - {end_time: 0, start_size: 40500.0}
+- name: TRJ
+  description: Tropical Oryza sativa japonica
+  start_time: 12000
+  ancestors: [RUF]
+  epochs:
+  - {end_time: 9000.0, start_size: 825.0}
+  - {end_time: 0, start_size: 18000.0}
+migrations:
+- demes: [RUF, IND, TRJ]
+  rate: 2.3333333333333332e-05
+  start_time: 9000.0

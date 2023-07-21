@@ -1,0 +1,27 @@
+description: These estimates were obtained from a sample of Papio Anubis individuals
+  from the colony housed at the Southwest National Primate Research Center (SNPRC).
+  SMC++ was run with a subset of 36 individuals from the population.
+time_units: generations
+generation_time: 1
+metadata:
+  id: SinglePopSMCpp_1W22
+  description: SMC++ estimates of N(t) for Papio Anubis individuals
+  citations:
+  - doi: https://doi.org/10.1093/gbe/evac040
+    author: Wall et. al.
+    year: 2022
+    reasons: [demographic model]
+  mutation_rate: 5.7e-09
+  generation_time: 11
+demes:
+- name: PAnubis_SNPRC
+  description: Papio Anubis population from SNPRC
+  epochs:
+  - {end_time: 186053.2682, start_size: 93362.02606}
+  - {end_time: 110830.9203, start_size: 55968.42221}
+  - {end_time: 71092.5441, start_size: 72998.86202}
+  - {end_time: 39328.5751, start_size: 30714.33863}
+  - {end_time: 15027.7847, start_size: 41841.54229}
+  - {end_time: 463.8092, start_size: 51822.58297}
+  - {end_time: 221.2812, start_size: 120758.1302}
+  - {end_time: 0, start_size: 335505.4808}

@@ -27,13 +27,13 @@ demes:
   start_time: 559000.0
   ancestors: [YRI]
   epochs:
-  - {end_time: 0, start_size: 3600}
+  - {end_time: 18700.0, start_size: 3600}
 - name: ArchaicAFR
   description: Putative Archaic Africans
   start_time: 499000.0
   ancestors: [YRI]
   epochs:
-  - {end_time: 0, start_size: 3600}
+  - {end_time: 18700.0, start_size: 3600}
 - name: CEU
   description: 1000 Genomes CEU (Utah Residents (CEPH) with Northern and Western European
     Ancestry)

@@ -7,8 +7,8 @@ description: Demographic model for American admixture, taken from Browning et al
   the mutation rate that Browning et al. used for simulation is smaller than used
   for inferring the model, so the mutation rate provided here is that from Gravel
   et al.
-time_units: generations
-generation_time: 1
+time_units: years
+generation_time: 25
 metadata:
   id: AmericanAdmixture_4B11
   description: American admixture
@@ -22,29 +22,28 @@ metadata:
     year: 2011
     reasons: [demographic model]
   mutation_rate: 2.36e-08
-  generation_time: 25
 demes:
 - name: AFR
   description: Contemporary African population
   epochs:
-  - {end_time: 5920, start_size: 7310}
+  - {end_time: 148000, start_size: 7310}
   - {end_time: 0, start_size: 14474.0}
 - name: EUR
   description: Contemporary European population
-  start_time: 2040
+  start_time: 51000
   ancestors: [AFR]
   epochs:
-  - {end_time: 920, start_size: 1861}
+  - {end_time: 23000, start_size: 1861}
   - {end_time: 0, start_size: 1032.0, end_size: 34038.718872685706}
 - name: ASIA
   description: Contemporary Asian population
-  start_time: 920
+  start_time: 23000
   ancestors: [EUR]
   epochs:
   - {end_time: 0, start_size: 554.0, end_size: 45851.568512352045}
 - name: ADMIX
   description: Modern admixed population
-  start_time: 12
+  start_time: 300
   ancestors: [AFR, EUR, ASIA]
   proportions: [0.16666666666666666, 0.33333333333333337, 0.5]
   epochs:
@@ -52,10 +51,10 @@ demes:
 migrations:
 - demes: [AFR, EUR]
   rate: 0.00015
-  end_time: 920.0
+  end_time: 23000.0
 - demes: [AFR, EUR]
   rate: 2.5e-05
-  start_time: 920.0
+  start_time: 23000.0
 - demes: [AFR, ASIA]
   rate: 7.8e-06
 - demes: [EUR, ASIA]

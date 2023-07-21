@@ -4,8 +4,8 @@ description: 'Demographic model of ghost admixture into bonobos from Kuhlwilm et
   admixture event is modelled as a 1.7% pulse from the ghost lineage to bonobos. Migration
   events among western chimpanzees, central chimpanzees, and bonobos are modelled
   as single generation pulses. Populatio size changes are also modelled.'
-time_units: generations
-generation_time: 1
+time_units: years
+generation_time: 25
 metadata:
   id: BonoboGhost_4K19
   description: Ghost admixture into bonobos
@@ -15,60 +15,59 @@ metadata:
     year: 2019
     reasons: [demographic model]
   mutation_rate: 1.2e-08
-  generation_time: 25
 demes:
 - name: ghost
   description: Extinct ghost lineage
   epochs:
-  - {end_time: 132040.0, start_size: 10000}
+  - {end_time: 3301000.0, start_size: 10000}
   - {end_time: 0, start_size: 10000.0}
 - name: bonobo
   description: Contemporary Bonobos
-  start_time: 132040.0
+  start_time: 3301000.0
   ancestors: [ghost]
   epochs:
-  - {end_time: 79600.0, start_size: 14200}
-  - {end_time: 79500.0, start_size: 11100.0}
-  - {end_time: 12320.0, start_size: 3900.0}
+  - {end_time: 1990000.0, start_size: 14200}
+  - {end_time: 1987500.0, start_size: 11100.0}
+  - {end_time: 308000.0, start_size: 3900.0}
   - {end_time: 0, start_size: 33500.0}
 - name: central
   description: Contemporary Central Chimpanzees
-  start_time: 79600.0
+  start_time: 1990000.0
   ancestors: [bonobo]
   epochs:
-  - {end_time: 28000.0, start_size: 10100}
-  - {end_time: 15120.0, start_size: 103100.0}
+  - {end_time: 700000.0, start_size: 10100}
+  - {end_time: 378000.0, start_size: 103100.0}
   - {end_time: 0, start_size: 73000.0}
 - name: western
   description: Contemporary Western Chimpanzees
-  start_time: 28000.0
+  start_time: 700000.0
   ancestors: [central]
   epochs:
-  - {end_time: 10440.0, start_size: 11000}
+  - {end_time: 261000.0, start_size: 11000}
   - {end_time: 0, start_size: 10100.0}
 migrations:
 - demes: [central, bonobo]
   rate: 1e-07
-  start_time: 60000.0
-  end_time: 48000.0
+  start_time: 1500000.0
+  end_time: 1200000.0
 pulses:
 - sources: [ghost]
   dest: bonobo
-  time: 20000.0
+  time: 500000.0
   proportions: [0.017]
 - sources: [central]
   dest: bonobo
-  time: 6202.0
+  time: 155050.0
   proportions: [0.005425]
 - sources: [bonobo]
   dest: central
-  time: 6202.0
+  time: 155050.0
   proportions: [0.003625]
 - sources: [western]
   dest: central
-  time: 4003.0
+  time: 100075.0
   proportions: [0.022425]
 - sources: [central]
   dest: western
-  time: 4003.0
+  time: 100075.0
   proportions: [0.014375]

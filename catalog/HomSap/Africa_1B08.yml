@@ -4,7 +4,7 @@ description: African-American two-epoch instantaneous growth model from Boyko et
   likelihood method of Williamson et al 2005; times were calibrated assuming 3e5 generations
   since human-chimp divergence and fitting the number of synonymous human-chimp differences.
   Mutation and recombination rates were assumed to be the same (1.8e-8).
-time_units: generations
+time_units: years
 generation_time: 1
 metadata:
   id: Africa_1B08
@@ -15,7 +15,6 @@ metadata:
     year: 2008
     reasons: [demographic model]
   mutation_rate: 1.8e-08
-  generation_time: 1
 demes:
 - name: African_Americans
   description: African-Americans from Boyko et al 2008

@@ -1,8 +1,8 @@
 description: The model is a simplification of the two population Tennesen et al. model
   with the European-American population removed so that we are modeling the African
   population in isolation.
-time_units: generations
-generation_time: 1
+time_units: years
+generation_time: 25
 metadata:
   id: Africa_1T12
   description: African population
@@ -12,11 +12,10 @@ metadata:
     year: 2012
     reasons: [demographic model]
   mutation_rate: 2.36e-08
-  generation_time: 25
 demes:
 - name: AFR
   description: African
   epochs:
-  - {end_time: 5920.0, start_size: 7310}
-  - {end_time: 204.6, start_size: 14474.0}
+  - {end_time: 148000.0, start_size: 7310}
+  - {end_time: 5115.0, start_size: 14474.0}
   - {end_time: 0, start_size: 14474.0, end_size: 432124.58438330283}

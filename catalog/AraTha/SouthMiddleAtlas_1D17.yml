@@ -4,7 +4,7 @@ description: This model comes from MSMC using two randomly sampled homozygous in
   the recent and ancient past are less accurate, we set the population size in the
   first 7 time periods equal to the size at the 8th time period and the size during
   last 2 time periods equal to the size in the 30th time period.
-time_units: generations
+time_units: years
 generation_time: 1
 metadata:
   id: SouthMiddleAtlas_1D17
@@ -15,7 +15,6 @@ metadata:
     year: 2017
     reasons: [demographic model]
   mutation_rate: 7.1e-09
-  generation_time: 1
 demes:
 - name: SouthMiddleAtlas
   description: Arabidopsis Thaliana South Middle Atlas population

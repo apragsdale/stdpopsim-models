@@ -21,10 +21,36 @@ if len(models) == 0:
 
 for model in models:
     b = model.model.to_demes().asdict()
-    if b["time_units"] != "generations":
-        # demes only takes generation time as a top level
-        # field if time units aren't gens
-        b["generation_time"] = model.generation_time
+    # time units (I believe) are typically (always?) in years...
+    # so we need to manually adjust things
+    assert b["time_units"] == "generations"
+    b["time_units"] = "years"
+    gen = model.generation_time
+    b["generation_time"] = gen
+
+    # we go through and adjust all times
+    # first with demes
+    for i, d in enumerate(b["demes"]):
+        if "start_time" in d:
+            d["start_time"] *= gen
+        for j, e in enumerate(d["epochs"]):
+            if "start_time" in e:
+                e["start_time"] *= gen
+            if "end_time" in e:
+                e["end_time"] *= gen
+            d["epochs"][j] = e
+        b["demes"][i] = d
+    # then with migrations
+    for i, m in enumerate(b["migrations"]):
+        if "start_time" in m:
+            m["start_time"] *= gen
+        if "end_time" in m:
+            m["end_time"] *= gen
+        b["migrations"][i] = m
+    # then with pulses
+    for i, p in enumerate(b["pulses"]):
+        p["time"] *= gen
+        b["pulses"][i] = p
 
     # descriptions have annoying line breaks and added spaces from stdpopsim
     desc = " ".join([_.strip() for _ in model.long_description.strip().splitlines()])
@@ -47,10 +73,6 @@ for model in models:
         "citations": citations,
         "mutation_rate": model.mutation_rate,
     }
-    if b["time_units"] == "generations":
-        # if time units are generations, we still may have generation times
-        # that are given in the model -- put them in metadata
-        b["metadata"]["generation_time"] = model.generation_time
 
     g = demes.Builder.fromdict(b).resolve()
 
@@ -59,4 +81,8 @@ for model in models:
         os.mkdir(fpath)
     fname = os.path.join(fpath, f"{model.id}.yml")
     # output model
-    demes.dump(g, fname)
+    if os.path.exists(fname):
+        # protect models that we may have needed to manually fix
+        print(fname, "already exists - not overwriting")
+    else:
+        demes.dump(g, fname)

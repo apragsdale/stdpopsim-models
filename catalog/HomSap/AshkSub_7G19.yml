@@ -14,8 +14,8 @@ description: This was the best fit model of Ashkenazi Jewish demographic history
   SNP array ascertainment scheme into the simulation. This demographic model does
   not include the SNP array ascertainment scheme. It should be noted that Gladstein
   and Hammer 2019 simulated with a mutation rate of 2.5e-8.
-time_units: generations
-generation_time: 1
+time_units: years
+generation_time: 25
 metadata:
   id: AshkSub_7G19
   description: Ashkenazi Jewish with substructure and European admixture
@@ -25,54 +25,53 @@ metadata:
     year: 2019
     reasons: [demographic model]
   mutation_rate: 2.5e-08
-  generation_time: 25
 demes:
 - name: YRI
   description: 1000 Genomes YRI (Yoruba)
   epochs:
-  - {end_time: 8800, start_size: 7300}
+  - {end_time: 220000, start_size: 7300}
   - {end_time: 0, start_size: 18197.008586099826}
 - name: CHB
   description: 1000 Genomes CHB (Han Chinese in Beijing, China)
-  start_time: 2105
+  start_time: 52625
   ancestors: [YRI]
   epochs:
   - {end_time: 0, start_size: 4073.802778041126}
 - name: CEU
   description: 1000 Genomes CEU (Utah Residents (CEPH) with Northern and Western European
     Ancestry)
-  start_time: 850
+  start_time: 21250
   ancestors: [CHB]
   epochs:
   - {end_time: 0, start_size: 33113.112148259075}
 - name: ME
   description: Middle Eastern
-  start_time: 481
+  start_time: 12025
   ancestors: [CEU]
   epochs:
   - {end_time: 0, start_size: 436515.8322401656}
 - name: J
   description: non-Ashkenazi Jewish
-  start_time: 211
+  start_time: 5275
   ancestors: [ME]
   epochs:
   - {end_time: 0, start_size: 354813.3892335753}
 - name: WAJ
   description: Western Ashkenazi Jewish
-  start_time: 29
+  start_time: 725
   ancestors: [J]
   epochs:
-  - {end_time: 13, start_size: 1096.4781961431852}
+  - {end_time: 325, start_size: 1096.4781961431852}
   - {end_time: 0, start_size: 6606.934480075957}
 - name: EAJ
   description: Eastern Ashkenazi Jewish
-  start_time: 14
+  start_time: 350
   ancestors: [WAJ]
   epochs:
-  - {end_time: 13, start_size: 1096.4781961431852}
+  - {end_time: 325, start_size: 1096.4781961431852}
   - {end_time: 0, start_size: 1949844.5997580455}
 pulses:
 - sources: [CEU]
   dest: WAJ
-  time: 28
+  time: 700
   proportions: [0.17]

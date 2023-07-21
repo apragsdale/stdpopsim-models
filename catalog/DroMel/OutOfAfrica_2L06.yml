@@ -1,8 +1,8 @@
 description: 'The three epoch (modern, bottleneck, ancestral) model estimated for
   two Drosophila Melanogaster populations: African (ancestral) and European (derived)
   from Li and Stephan (2006).'
-time_units: generations
-generation_time: 1
+time_units: years
+generation_time: 0.1
 metadata:
   id: OutOfAfrica_2L06
   description: Three epoch model for African and European populations
@@ -12,17 +12,16 @@ metadata:
     year: 2006
     reasons: [demographic model]
   mutation_rate: 1.45e-09
-  generation_time: 0.1
 demes:
 - name: AFR
   description: African D. melanogaster population
   epochs:
-  - {end_time: 600000, start_size: 1720600.0}
-  - {end_time: 0, start_size: 8603000.0}
+  - {end_time: 60000.0, start_size: 1720600.0}
+  - {end_time: 0.0, start_size: 8603000.0}
 - name: EUR
   description: European D. melanogaster population
-  start_time: 158000
+  start_time: 15800.0
   ancestors: [AFR]
   epochs:
-  - {end_time: 154600, start_size: 2200}
-  - {end_time: 0, start_size: 1075000.0}
+  - {end_time: 15460.0, start_size: 2200}
+  - {end_time: 0.0, start_size: 1075000.0}
